@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin:'application'
+
+version = 0.1
+sourceCompatibility = 1.8
+
+mainClassName = "Main"
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src'
+    }
+  }
+
+  test {
+    java {
+      srcDir 'test'
+    }
+  }
+}
+
+jar {
+  manifest {
+    attributes 'Main-Class': 'Main'
+  }
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
+
+repositories {
+   jcenter()
+}
+
